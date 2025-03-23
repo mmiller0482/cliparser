@@ -4,28 +4,31 @@ namespace Cli.Parser;
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 
 public static class Parser
 {
+
+    private static Dictionary<string, PropertyInfo> ExtractOptionMap<T>()
+    {
+        Dictionary<string, PropertyInfo> optionMap = [];
+        PropertyInfo[] properties = typeof(T).GetProperties(bindingAttr: BindingFlags.Instance | BindingFlags.Public);
+        
+        foreach (PropertyInfo prop in properties)
+        {
+            var attr = prop.GetCustomAttribute<CliOptionAttribute>();
+            
+            if (attr == null) continue;
+            optionMap[attr.ShortName] = prop;
+            optionMap[attr.LongName] = prop;
+        }
+        
+        return optionMap; 
+    }
     public static T Parse<T>(string[] args) where T : new()
     {
         var obj = new T();
-        var properties = typeof(T).GetProperties(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
-
-        var optionMap = new Dictionary<string, PropertyInfo>();
-
-        // Map short and long names to properties
-        foreach (var prop in properties)
-        {
-            var attr = prop.GetCustomAttribute<CliOptionAttribute>();
-            if (attr != null)
-            {
-                optionMap[attr.ShortName] = prop;
-                optionMap[attr.LongName] = prop;
-            }
-        }
+        Dictionary<string, PropertyInfo> optionMap = ExtractOptionMap<T>();
 
         // Iterate through args
         for (int i = 0; i < args.Length; i++)
