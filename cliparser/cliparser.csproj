@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Cli.Args\Cli.Args.csproj" />
+      <ProjectReference Include="..\Cli.Parser\Cli.Parser.csproj" />
     </ItemGroup>
 
 </Project>
