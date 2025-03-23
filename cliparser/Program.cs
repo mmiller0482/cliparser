@@ -8,7 +8,7 @@ internal static class Program
     {
         Console.WriteLine(HelpTextGenerator.Generate<SampleArgs>());
         
-        SampleArgs myArgs = Parser.Parse<SampleArgs>(["-v", "Hello world"]);
+        SampleArgs myArgs = Parser.Parse<SampleArgs>(["-v", "Hello world", "-a", "someAnother"]);
         
         Console.WriteLine("GOT: ");
         Console.WriteLine(myArgs);
