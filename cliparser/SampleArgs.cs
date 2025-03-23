@@ -5,5 +5,5 @@ namespace CliParser;
 public class SampleArgs
 {
     [CliOption("-v", "--val", Required = true)]
-    private string Val { get; set; }
+    public string Val { get; set; }
 }
