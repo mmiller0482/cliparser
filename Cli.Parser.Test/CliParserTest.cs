@@ -4,7 +4,7 @@ namespace Cli.Parser.Test;
 
 using Xunit;
 
-public class ParserTest
+public class CliParserTest
 {
     [Fact]
     public void Parse_Empty_EmptyClass()
@@ -43,6 +43,17 @@ public class ParserTest
         Assert.Equal("Alice", result.Name);
         Assert.Equal(30, result.Age);
     }
+    
+    [Fact]
+    public void Parse_Throws_WhenLastArgumentIsNull()
+    {
+        // Arrange
+        string[] args = [ "-n", "Alice", "--age" ];
+
+        // Act & Assert
+        Assert.Throws<CliParserException>(() => new CliParser<SampleArgs>().Parse(args));
+    }
+    
     private class SampleEmptyArgs
     {
     }
