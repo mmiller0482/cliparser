@@ -4,10 +4,10 @@ namespace Cli.Parser.Sample;
 
 public class SampleArgs
 {
-    [CliOption("-v", "--val", Required = true)]
+    [CliBoolOptionAtribute("-v", "--val", Required = true)]
     public string Val { get; set; }
     
-    [CliOption("-a", "--another", Required = true)]
+    [CliBoolOptionAtribute("-a", "--another", Required = true)]
     public string Another { get; set; }
 
 
