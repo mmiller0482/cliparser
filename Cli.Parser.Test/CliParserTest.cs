@@ -60,10 +60,10 @@ public class CliParserTest
     
     private class SampleArgs
     {
-        [CliOption("-n", "--name", Required = true)]
+        [CliBoolOption("-n", "--name", Required = true)]
         public string Name { get; set; }
     
-        [CliOption("-a", "--age")]
+        [CliBoolOption("-a", "--age")]
         public int Age { get; set; }
     }
 }
