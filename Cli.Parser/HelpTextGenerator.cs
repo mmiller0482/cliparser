@@ -15,7 +15,7 @@ public static class HelpTextGenerator
 
         foreach (var prop in properties)
         {
-            var attr = prop.GetCustomAttribute<CliBoolOptionAtribute>();
+            var attr = prop.GetCustomAttribute<CliBoolOptionAttribute>();
             if (attr == null) continue;
             
             sb.Append($"  {attr.ShortName}, {attr.LongName}");

@@ -16,7 +16,7 @@ public static class Parser
         
         foreach (PropertyInfo prop in properties)
         {
-            var attr = prop.GetCustomAttribute<CliBoolOptionAtribute>();
+            var attr = prop.GetCustomAttribute<CliBoolOptionAttribute>();
             
             if (attr == null) continue;
             optionMap[attr.ShortName] = prop;
