@@ -1,6 +1,6 @@
 ﻿namespace Cli.Parser.Test;
 
-public class HelpTextGenerator
+public class HelpTextGeneratorTest
 {
     [Fact]
     public void Test1()
