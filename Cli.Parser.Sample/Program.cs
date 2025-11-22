@@ -1,6 +1,4 @@
-﻿using Cli.Parser;
-
-namespace CliParser;
+﻿namespace Cli.Parser.Sample;
 
 internal static class Program
 {

@@ -1,6 +1,6 @@
 using Cli.Args;
 
-namespace CliParser;
+namespace Cli.Parser.Sample;
 
 public class SampleArgs
 {

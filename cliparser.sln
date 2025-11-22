@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cliparser", "cliparser\cliparser.csproj", "{5C9EA488-4193-4954-8A11-810DF20F4B9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cli.Parser.Sample", "Cli.Parser.Sample\Cli.Parser.Sample.csproj", "{5C9EA488-4193-4954-8A11-810DF20F4B9C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cli.Parser", "Cli.Parser\Cli.Parser.csproj", "{6CB617D0-1C30-4DCB-90C5-BAEA57C78C6B}"
 EndProject
