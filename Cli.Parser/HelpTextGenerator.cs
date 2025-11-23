@@ -10,20 +10,17 @@ public static class HelpTextGenerator
     {
         var sb = new StringBuilder();
         sb.AppendLine("Usage:");
-        
-        var properties = typeof(T).GetProperties(BindingFlags.Instance |  BindingFlags.Public);
+
+        var properties = typeof(T).GetProperties(BindingFlags.Instance | BindingFlags.Public);
 
         foreach (var prop in properties)
         {
             var attr = prop.GetCustomAttribute<CliBoolOptionAttribute>();
             if (attr == null) continue;
-            
+
             sb.Append($"  {attr.ShortName}, {attr.LongName}");
 
-            if (attr.Required)
-            {
-                sb.Append(" (Required)");
-            }
+            if (attr.Required) sb.Append(" (Required)");
 
             sb.AppendLine();
         }
