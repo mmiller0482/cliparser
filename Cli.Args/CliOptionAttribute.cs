@@ -7,10 +7,6 @@ namespace Cli.Args;
 [AttributeUsage(AttributeTargets.Property)]
 public abstract class CliOptionAttribute : Attribute
 {
-    protected CliOptionAttribute()
-    {
-    }
-
     // TODO: What are we going to do about 'subcommands' ? Future issue.
     /// <summary>
     ///     The shorthand specifier for a keyword argument.
@@ -23,5 +19,4 @@ public abstract class CliOptionAttribute : Attribute
     ///     Example. --help for help
     /// </summary>
     public string LongName { get; init; }
-
 }

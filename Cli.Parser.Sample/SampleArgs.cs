@@ -4,10 +4,10 @@ namespace Cli.Parser.Sample;
 
 public class SampleArgs
 {
-    [CliKeywordOption(ShortName="-v", LongName="--val", Required = true)]
+    [CliKeywordOption(ShortName = "-v", LongName = "--val", Required = true)]
     public string Val { get; set; }
 
-    [CliKeywordOption(ShortName="-a", LongName="--another", Required = true)]
+    [CliKeywordOption(ShortName = "-a", LongName = "--another", Required = true)]
     public string Another { get; set; }
 
 

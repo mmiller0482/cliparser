@@ -58,9 +58,10 @@ public class CliParserTest
 
     private class SampleArgs
     {
-        [CliKeywordOption(ShortName= "-n", LongName="--name", Required = true)]
+        [CliKeywordOption(ShortName = "-n", LongName = "--name", Required = true)]
         public string Name { get; set; }
 
-        [CliKeywordOption(ShortName="-a", LongName="--age")] public int Age { get; set; }
+        [CliKeywordOption(ShortName = "-a", LongName = "--age")]
+        public int Age { get; set; }
     }
 }
