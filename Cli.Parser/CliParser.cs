@@ -45,7 +45,7 @@ public class CliParser<T> where T : new()
 
         foreach (var prop in properties)
         {
-            var attr = prop.GetCustomAttribute<CliBoolOptionAttribute>();
+            var attr = prop.GetCustomAttribute<CliKeywordOptionAttribute>();
 
             if (attr == null) continue;
             optionMap[attr.ShortName] = prop;

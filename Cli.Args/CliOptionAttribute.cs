@@ -7,10 +7,8 @@ namespace Cli.Args;
 [AttributeUsage(AttributeTargets.Property)]
 public abstract class CliOptionAttribute : Attribute
 {
-    protected CliOptionAttribute(string shortName, string longName)
+    protected CliOptionAttribute()
     {
-        ShortName = shortName;
-        LongName = longName;
     }
 
     // TODO: What are we going to do about 'subcommands' ? Future issue.
@@ -18,17 +16,12 @@ public abstract class CliOptionAttribute : Attribute
     ///     The shorthand specifier for a keyword argument.
     ///     Example. -h for help.
     /// </summary>
-    public string ShortName { get; }
+    public string ShortName { get; init; }
 
     /// <summary>
     ///     The longhand specifier for a keyword argument.
     ///     Example. --help for help
     /// </summary>
-    public string LongName { get; }
+    public string LongName { get; init; }
 
-    /// <summary>
-    ///     Specifies whether the argument is required.
-    ///     Default -- false.
-    /// </summary>
-    public bool Required { get; set; }
 }
